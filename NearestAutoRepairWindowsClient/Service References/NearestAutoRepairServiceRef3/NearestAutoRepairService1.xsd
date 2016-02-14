@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://MyCompany.com/AutoRepair" elementFormDefault="qualified" targetNamespace="http://MyCompany.com/AutoRepair" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+  <xs:element name="AutoRepairShopRequestObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://tempuri.org/" minOccurs="0" ref="q1:Geolocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoRepairShopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://tempuri.org/" minOccurs="0" ref="q2:AutoRepairShopInfosList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoRepairShopInfoObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Geolocation" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

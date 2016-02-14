@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a6a097bc-ac9b-48ab-8d21-7849316320d0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NearestAutoRepairService.xsd" MetadataType="Schema" ID="ea642936-ed6f-4bea-b9f7-97f74851e725" SourceId="1" SourceUrl="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NearestAutoRepairService1.xsd" MetadataType="Schema" ID="99036a60-9621-4d1a-bbc0-62856d488f86" SourceId="1" SourceUrl="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NearestAutoRepairService2.xsd" MetadataType="Schema" ID="0bc5a070-c284-49eb-b575-05c96c6680cb" SourceId="1" SourceUrl="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NearestAutoRepairService.wsdl" MetadataType="Wsdl" ID="29256f2c-644d-47bd-b8bf-01161b0d1a6c" SourceId="1" SourceUrl="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?wsdl" />
+    <MetadataFile FileName="NearestAutoRepairService3.xsd" MetadataType="Schema" ID="ec494296-d72f-4ccd-acfa-21056e40c84b" SourceId="1" SourceUrl="https://tompc/NearestAutoRepairIISHost/NearestAutoRepairService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

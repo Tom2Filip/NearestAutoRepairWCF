@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NearestAutoRepairService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_INearestAutoRepairService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:SignedSupportingTokens>
+                      <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:WssUsernameToken10 />
+                          </wsp:Policy>
+                        </sp:UsernameToken>
+                      </wsp:Policy>
+                    </sp:SignedSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy />
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" />
+      <xsd:import schemaLocation="http://localhost/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc?xsd=xsd3" namespace="http://MyCompany.com/AutoRepair" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INearestAutoRepairService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetData_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q1:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetAllAutoRepairs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutoRepairs" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetAllAutoRepairs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAutoRepairsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetAllAutoRepairs_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q2:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetFiveNearestAutoRepairs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveNearestAutoRepairs" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetFiveNearestAutoRepairs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveNearestAutoRepairsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetFiveNearestAutoRepairs_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q3:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetNearestAutoRepair_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestAutoRepair" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetNearestAutoRepair_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestAutoRepairResponse" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetNearestAutoRepair_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q4:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="AutoRepairShopRequest">
+    <wsdl:part xmlns:q5="http://MyCompany.com/AutoRepair" name="parameters" element="q5:AutoRepairShopRequestObject" />
+  </wsdl:message>
+  <wsdl:message name="AutoRepairShopRequest_Headers">
+    <wsdl:part name="LicenseKey" element="tns:LicenseKey" />
+  </wsdl:message>
+  <wsdl:message name="AutoRepairShopInfoList">
+    <wsdl:part xmlns:q6="http://MyCompany.com/AutoRepair" name="parameters" element="q6:AutoRepairShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetAllAutoRepairsRequest_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q7:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="AutoRepairShopInfo">
+    <wsdl:part xmlns:q8="http://MyCompany.com/AutoRepair" name="parameters" element="q8:AutoRepairShopInfoObject" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetNearestAutoRepairRequest_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q9:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:message name="INearestAutoRepairService_GetFiveNearestAutoRepairRequest_AutoRepairFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/NearestAutoRepairService" name="detail" element="q10:AutoRepairFault" />
+  </wsdl:message>
+  <wsdl:portType name="INearestAutoRepairService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetData" message="tns:INearestAutoRepairService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetDataResponse" message="tns:INearestAutoRepairService_GetData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetDataAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetData_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoRepairs">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairs" message="tns:INearestAutoRepairService_GetAllAutoRepairs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsResponse" message="tns:INearestAutoRepairService_GetAllAutoRepairs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetAllAutoRepairs_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveNearestAutoRepairs">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairs" message="tns:INearestAutoRepairService_GetFiveNearestAutoRepairs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairsResponse" message="tns:INearestAutoRepairService_GetFiveNearestAutoRepairs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairsAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetFiveNearestAutoRepairs_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestAutoRepair">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepair" message="tns:INearestAutoRepairService_GetNearestAutoRepair_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairResponse" message="tns:INearestAutoRepairService_GetNearestAutoRepair_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetNearestAutoRepair_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoRepairsRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsRequest" name="AutoRepairShopRequest" message="tns:AutoRepairShopRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsRequestResponse" name="AutoRepairShopInfoList" message="tns:AutoRepairShopInfoList" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsRequestAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetAllAutoRepairsRequest_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestAutoRepairRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairRequest" name="AutoRepairShopRequest" message="tns:AutoRepairShopRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairRequestResponse" name="AutoRepairShopInfo" message="tns:AutoRepairShopInfo" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairRequestAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetNearestAutoRepairRequest_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveNearestAutoRepairRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairRequest" name="AutoRepairShopRequest" message="tns:AutoRepairShopRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairRequestResponse" name="AutoRepairShopInfoList" message="tns:AutoRepairShopInfoList" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairRequestAutoRepairFaultFault" name="AutoRepairFaultFault" message="tns:INearestAutoRepairService_GetFiveNearestAutoRepairRequest_AutoRepairFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_INearestAutoRepairService" type="tns:INearestAutoRepairService">
+    <wsp:PolicyReference URI="#WSHttpBinding_INearestAutoRepairService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoRepairs">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveNearestAutoRepairs">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestAutoRepair">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepair" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAutoRepairsRequest">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetAllAutoRepairsRequest" style="document" />
+      <wsdl:input name="AutoRepairShopRequest">
+        <soap12:header message="tns:AutoRepairShopRequest_Headers" part="LicenseKey" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AutoRepairShopInfoList">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestAutoRepairRequest">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetNearestAutoRepairRequest" style="document" />
+      <wsdl:input name="AutoRepairShopRequest">
+        <soap12:header message="tns:AutoRepairShopRequest_Headers" part="LicenseKey" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AutoRepairShopInfo">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveNearestAutoRepairRequest">
+      <soap12:operation soapAction="http://tempuri.org/INearestAutoRepairService/GetFiveNearestAutoRepairRequest" style="document" />
+      <wsdl:input name="AutoRepairShopRequest">
+        <soap12:header message="tns:AutoRepairShopRequest_Headers" part="LicenseKey" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="AutoRepairShopInfoList">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AutoRepairFaultFault">
+        <soap12:fault use="literal" name="AutoRepairFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NearestAutoRepairService">
+    <wsdl:port name="WSHttpBinding_INearestAutoRepairService" binding="tns:WSHttpBinding_INearestAutoRepairService">
+      <soap12:address location="https://tompc/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://tompc/NearestAutoRepairPublicIISHost/NearestAutoRepairServicePublic.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

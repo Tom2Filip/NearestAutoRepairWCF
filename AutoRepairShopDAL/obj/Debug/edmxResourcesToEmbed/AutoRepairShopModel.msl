@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutoRepairDBModelStoreContainer" CdmEntityContainer="AutoRepairDBEntities">
+    <EntitySetMapping Name="AutoRepairShops">
+      <EntityTypeMapping TypeName="AutoRepairDBModel.AutoRepairShop">
+        <MappingFragment StoreEntitySet="AutoRepairShop">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Geolocation" ColumnName="Geolocation" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,4 @@
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopDTO\bin\Debug\AutoRepairShopDTO.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopDTO\bin\Debug\AutoRepairShopDTO.pdb
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopDTO\obj\Debug\AutoRepairShopDTO.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopDTO\obj\Debug\AutoRepairShopDTO.pdb

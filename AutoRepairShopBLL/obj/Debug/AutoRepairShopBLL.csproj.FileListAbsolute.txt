@@ -1,0 +1,11 @@
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopBLL.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopBLL.pdb
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopDAL.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopDTO.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\EntityFramework.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopDAL.pdb
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\AutoRepairShopDTO.pdb
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\bin\Debug\EntityFramework.xml
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\obj\Debug\AutoRepairShopBLL.csprojResolveAssemblyReference.cache
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\obj\Debug\AutoRepairShopBLL.dll
+D:\Web\NearestAutoRepairWCFSolution\AutoRepairShopBLL\obj\Debug\AutoRepairShopBLL.pdb
